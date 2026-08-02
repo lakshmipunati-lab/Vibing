@@ -6,12 +6,15 @@
 
 ## At a Glance
 
-- **One-sentence pitch:** _What is this product, and who is it for?_
-- **Status (Confidence Line):** `M1 · M2 · M3 · M4 · M5 · M6` — _which phase are you in? what's real vs. mocked?_
+- **One-sentence pitch:** FinLit is a Duolingo-style financial literacy app reframed as a bank dashboard — lessons appear as transactions to be deposited, and completing them unlocks new accounts (Checking → Savings → Credit Card) — built to test whether a familiar banking metaphor improves early user retention over a generic gamified lesson list.
+- **Status (Confidence Line):** `M1 ✅ · M2 ✅ · M3 🔶 · M4 🔶 · M5 ✅ · M6 ⬜`
+  - What's real: onboarding, welcome bonus, balance/points system, XP/level system (tracked separately from points), Financial Health Score, account unlock logic gated by lesson count, sequential lesson locking, transaction-feed activity list, streak counter + calendar, Store (points redemption toward real-world rewards), Coupons (with working empty state), Profile stats — all backed by Supabase.
+  - What's mocked or unverified: multi-day streak reset/increment behavior (only tested on Day 1), push notification delivery (in-app toggle exists, no real notifications sent), weekly leaderboard (teased, not yet verified), Learning Goal persistence in Profile settings (showing "Not set" — likely a bug), whether Store redemptions actually deduct from balance or are display-only.
+  - No external APIs are connected — all financial data is simulated by design.
 - **Live URLs:**
-  - Lovable preview: _[link]_
-  - Deployed prod: _[link, if any]_
-  - Supabase project: _[link, if any]_
+  - Lovable preview: https://finlit-daily-quest.lovable.app/learn
+  - Deployed prod: _same as above, unless separately published_
+  - Supabase project: _[add your Supabase project link here]_
 
 ### Where to read next
 - **For PMs** → [`living-prd.md`](living-prd.md)
@@ -24,12 +27,12 @@
 
 | Module | Phase | Status | Key Artifact |
 |--------|-------|--------|--------------|
-| **M1** | Activate | [ ] | Build–Show–Learn–Decide loop |
-| **M2** | Validate | [ ] | Riskiest-assumption test |
-| **M3** | Direct | [ ] | [`prompts/`](prompts/) — Living Prompt Pack |
-| **M4** | Structure | [ ] | [`living-prd.md`](living-prd.md) + [`handoff.md`](handoff.md) |
-| **M5** | Ship | [ ] | Live deployment + resistance engineering |
-| **M6** | Measure | [ ] | Evidence-backed continue / pivot / kill |
+| **M1** | Activate | [x] | Scenario 1: The Retention Engine — chosen and reframed around financial-literacy churn |
+| **M2** | Validate | [x] | Riskiest-assumption test: does the bank-dashboard framing outperform generic gamification on Day-7 retention? |
+| **M3** | Direct | [ ] | [`prompts/`](prompts/) — Living Prompt Pack (draft written, needs your real Lovable prompt history swapped in) |
+| **M4** | Structure | [ ] | [`living-prd.md`](living-prd.md) + [`handoff.md`](handoff.md) — both drafted, need final review |
+| **M5** | Ship | [x] | Live deployment at the Lovable URL above; core loop (onboarding → lesson → balance update → unlock) confirmed working via screen walkthrough |
+| **M6** | Measure | [ ] | Not started — blocked on multi-day streak testing (see handoff.md "Start Here" priority) |
 
 ---
 
