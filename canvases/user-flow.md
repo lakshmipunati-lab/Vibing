@@ -1,6 +1,6 @@
 # FinLit — User Flow Canvas
 
-Pairs with the full screen map in [`living-prd.md`](living-prd.md). This is the one-screen version of the primary journey.
+This is the one-screen version of the primary journey.
 
 ## Primary journey
 
